@@ -1,3 +1,10 @@
 setuptools
-
+numpy
+pandas
+scikit-learn
+seaborn
+matplotlib
+flask
+loguru
+python-dotenv
 -e .
