@@ -21,7 +21,7 @@ class DataTransformationConfig:
 class DataTransformation:
     @logger.catch()
     def __init__(self):
-        self.data_transformation_Config = DataTransformationConfig()
+        self.data_transformation_config = DataTransformationConfig()
 
     @logger.catch()
     def get_data_transformation(self):
@@ -31,7 +31,7 @@ class DataTransformation:
 
             # Define which columns should be ordinal-encoded and which should be scaled
             cat_col = ['cut','color','clarity']
-            num_col = ['carot','depth','table','x','y','z']
+            num_col = ['carat','depth','table','x','y','z']
 
             # Define the custom ranking for each variable :
             cut_categories = ['Fair','Good','Very Good','Premium','Ideal']
@@ -98,12 +98,14 @@ class DataTransformation:
             logger.info("Applying preprocessing object on training and testing datasets.")         
 
             save_object(
-                file_path = self.data_transformation_config.preprocessor_obj_path,
+                file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj = preprocessor_obj
-                
+
             )
+
+            logger.info('preprocessing pickle file saved')
             
-            return(input_feature_train, input_feature_test)
+            return(input_feature_train, input_feature_test, target_feature_train_df,target_feature_test_df)
 
         except Exception as e:
             logger.exception(e)
