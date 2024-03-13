@@ -15,7 +15,7 @@ from Diamond_Prediction.utils.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join(os.path.dirname(find_dotenv()), 'Artifacts','preprocessor.pk1')
+    preprocessor_obj_file_path = os.path.join(os.path.dirname(find_dotenv()), 'Artifacts','preprocessor.pkl')
     
 
 class DataTransformation:
