@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from Diamond_Prediction.components.data_ingestion import DataIngestion
 from Diamond_Prediction.components.data_transformation import DataTransformation
+from Diamond_Prediction.components.model_trainer import ModelTrainer
 from Diamond_Prediction.logger import logger
 
 
@@ -21,5 +22,9 @@ train_data, test_data = obj.initiate_data_ingestion()
 
 obj2 = DataTransformation()
 
-xtrain, ytrain = obj2.initialize_data_transformation(train_data, test_data)
+train_trans_df, test_trans_df, train_target, test_target = obj2.initialize_data_transformation(train_data, test_data)
+
+obj3 = ModelTrainer()
+
+obj3.initiate_model_training(train_trans_df, test_trans_df, train_target, test_target)
 
