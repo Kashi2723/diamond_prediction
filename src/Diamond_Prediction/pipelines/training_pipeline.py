@@ -18,11 +18,11 @@ class initiate_training():
         
 obj = DataIngestion()
 
-train_data, test_data = obj.initiate_data_ingestion()
+train_data_path, test_data_path = obj.initiate_data_ingestion()
 
 obj2 = DataTransformation()
 
-train_trans_df, test_trans_df, train_target, test_target = obj2.initialize_data_transformation(train_data, test_data)
+train_trans_df, test_trans_df, train_target, test_target = obj2.initialize_data_transformation(train_data_path, test_data_path)
 
 obj3 = ModelTrainer()
 
