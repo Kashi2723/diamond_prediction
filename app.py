@@ -40,4 +40,4 @@ def predict_datapoints():
         return render_template('result.html',final_result = result)
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host = "0.0.0.0", port= 8080)
