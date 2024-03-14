@@ -6,90 +6,149 @@
     <title>Diamond Price Prediction</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff; /* Light Blue */
-            color: #333;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #e0f2f1; /* Light blue background */
         }
-
-        header {
-            background-color: #87ceeb; /* Sky Blue */
-            padding: 20px;
-            text-align: center;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* To position diamond shapes */
         }
-
-        h1, h2 {
+        h1 {
+            text-align: center;
             color: #333;
         }
-
-        p {
-            line-height: 1.6;
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-
-        button {
-            background-color: #87ceeb; /* Sky Blue */
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
         }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #87ceeb; /* Sky Blue */
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* Diamond shape styles */
+        .diamond {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background-color: #4caf50;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(45deg);
+            z-index: -1; /* Behind the container */
+        }
+        .diamond::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: inherit;
+            transform: translate(-50%, -50%) rotate(45deg);
         }
     </style>
 </head>
 <body>
-
-    <header>
+    <div class="container">
+        <div class="diamond"></div> <!-- Diamond shape -->
         <h1>Diamond Price Prediction</h1>
-    </header>
+        <form id="diamondForm">
+            <label for="carat">Carat:</label>
+            <input type="text" id="carat" name="carat" placeholder="Enter Carat">
 
-    <section>
-        <h2>Welcome to Our Revolutionary Diamond Price Prediction Project</h2>
-        <p>
-            Our advanced Diamond Price Prediction model utilizes cutting-edge technology to predict the price of diamonds based on various factors such as carat, cut, color, clarity, depth, table, x, y, z.
-        </p>
-        <p>
-            This revolutionary tool is designed to assist merchants in making informed decisions, providing accurate predictions for diamond prices. It's a game-changer in the diamond industry, streamlining processes and improving overall efficiency.
-        </p>
+            <label for="cut">Cut:</label>
+            <select id="cut" name="cut">
+                <option value="Premium">Premium</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Ideal">Ideal</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+            </select>
 
-        <h2>Key Features:</h2>
-        <ul>
-            <li>Accurate Price Predictions</li>
-            <li>Easy-to-Use Interface</li>
-            <li>Mobile-Friendly</li>
-            <li>Helps Merchants Make Informed Decisions</li>
-        </ul>
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" placeholder="Enter Color">
 
-        <h2>How It Benefits Merchants:</h2>
-        <p>
-            Our Diamond Price Prediction project empowers merchants by providing reliable insights into diamond prices, enabling them to optimize their inventory and pricing strategies. Say goodbye to uncertainty and hello to data-driven decision-making.
-        </p>
+            <label for="clarity">Clarity:</label>
+            <input type="text" id="clarity" name="clarity" placeholder="Enter Clarity">
 
-        <button onclick="location.href='form.html'">Enter Diamond Details</button>
-    </section>
+            <label for="depth">Depth:</label>
+            <input type="text" id="depth" name="depth" placeholder="Enter Depth">
 
-    <footer>
-        <p>&copy; 2024 Diamond Price Prediction | All rights reserved</p>
-    </footer>
+            <label for="table">Table:</label>
+            <input type="text" id="table" name="table" placeholder="Enter Table">
 
+            <label for="x">X:</label>
+            <input type="text" id="x" name="x" placeholder="Enter X">
+
+            <label for="y">Y:</label>
+            <input type="text" id="y" name="y" placeholder="Enter Y">
+
+            <label for="z">Z:</label>
+            <input type="text" id="z" name="z" placeholder="Enter Z">
+
+            <input type="submit" value="Predict Price">
+        </form>
+    </div>
+
+    <!-- JavaScript for handling form submission and prediction -->
+    <script>
+        document.getElementById('diamondForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collect input values
+            var carat = parseFloat(document.getElementById('carat').value);
+            var cut = document.getElementById('cut').value;
+            var color = document.getElementById('color').value;
+            var clarity = document.getElementById('clarity').value;
+            var depth = parseFloat(document.getElementById('depth').value);
+            var table = parseFloat(document.getElementById('table').value);
+            var x = parseFloat(document.getElementById('x').value);
+            var y = parseFloat(document.getElementById('y').value);
+            var z = parseFloat(document.getElementById('z').value);
+
+            // Here you can implement your prediction algorithm
+            // For now, let's just log the input values
+            console.log("Input Values:");
+            console.log("Carat:", carat);
+            console.log("Cut:", cut);
+            console.log("Color:", color);
+            console.log("Clarity:", clarity);
+            console.log("Depth:", depth);
+            console.log("Table:", table);
+            console.log("X:", x);
+            console.log("Y:", y);
+            console.log("Z:", z);
+
+            // Here you can send the data to your server for prediction
+            // You can use AJAX or fetch API to send the data to your backend
+            // Once you receive the prediction, you can display it to the user
+        });
+    </script>
 </body>
 </html>
