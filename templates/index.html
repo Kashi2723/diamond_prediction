@@ -3,152 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Price Prediction</title>
+    <title>Diamond Price Prediction - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f2f1; /* Light blue background */
+            background-color: #f9f9f9;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* To position diamond shapes */
-        }
-        h1 {
             text-align: center;
+        }
+        h1, h2 {
             color: #333;
         }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        input[type="text"], select {
-            width: 100%;
-            padding: 10px;
+        p {
+            color: #666;
+            line-height: 1.6;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
         }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
+        button {
+            padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
-        input[type="submit"]:hover {
+        button:hover {
             background-color: #0056b3;
-        }
-        /* Diamond shape styles */
-        .diamond {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 50px;
-            height: 50px;
-            background-color: #4caf50;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            transform: rotate(45deg);
-            z-index: -1; /* Behind the container */
-        }
-        .diamond::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background-color: inherit;
-            transform: translate(-50%, -50%) rotate(45deg);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="diamond"></div> <!-- Diamond shape -->
-        <h1>Diamond Price Prediction</h1>
-        <form id="diamondForm">
-            <label for="carat">Carat:</label>
-            <input type="text" id="carat" name="carat" placeholder="Enter Carat">
-
-            <label for="cut">Cut:</label>
-            <select id="cut" name="cut">
-                <option value="Premium">Premium</option>
-                <option value="Very Good">Very Good</option>
-                <option value="Ideal">Ideal</option>
-                <option value="Good">Good</option>
-                <option value="Fair">Fair</option>
-            </select>
-
-            <label for="color">Color:</label>
-            <input type="text" id="color" name="color" placeholder="Enter Color">
-
-            <label for="clarity">Clarity:</label>
-            <input type="text" id="clarity" name="clarity" placeholder="Enter Clarity">
-
-            <label for="depth">Depth:</label>
-            <input type="text" id="depth" name="depth" placeholder="Enter Depth">
-
-            <label for="table">Table:</label>
-            <input type="text" id="table" name="table" placeholder="Enter Table">
-
-            <label for="x">X:</label>
-            <input type="text" id="x" name="x" placeholder="Enter X">
-
-            <label for="y">Y:</label>
-            <input type="text" id="y" name="y" placeholder="Enter Y">
-
-            <label for="z">Z:</label>
-            <input type="text" id="z" name="z" placeholder="Enter Z">
-
-            <input type="submit" value="Predict Price">
-        </form>
+        <h1>Welcome to Diamond Price Prediction</h1>
+        <p>Our Diamond Price Prediction model helps you estimate the price of a diamond based on various characteristics. To predict the price, we consider factors such as carat, cut, color, clarity, depth, table, and dimensions (x, y, z).</p>
+        <h2>How it Works:</h2>
+        <p>Simply fill out the form with the details of the diamond you're interested in, and our model will predict its price based on the provided information.</p>
+        <p>Our model has been trained on a large dataset of diamonds with known prices, allowing it to make accurate predictions.</p>
+        <p>Once you submit the form, our prediction algorithm will process the data and provide you with an estimated price for the diamond.</p>
+        <button onclick="window.location.href='/predict'">Predict Price Now</button>
     </div>
-
-    <!-- JavaScript for handling form submission and prediction -->
-    <script>
-        document.getElementById('diamondForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Collect input values
-            var carat = parseFloat(document.getElementById('carat').value);
-            var cut = document.getElementById('cut').value;
-            var color = document.getElementById('color').value;
-            var clarity = document.getElementById('clarity').value;
-            var depth = parseFloat(document.getElementById('depth').value);
-            var table = parseFloat(document.getElementById('table').value);
-            var x = parseFloat(document.getElementById('x').value);
-            var y = parseFloat(document.getElementById('y').value);
-            var z = parseFloat(document.getElementById('z').value);
-
-            // Here you can implement your prediction algorithm
-            // For now, let's just log the input values
-            console.log("Input Values:");
-            console.log("Carat:", carat);
-            console.log("Cut:", cut);
-            console.log("Color:", color);
-            console.log("Clarity:", clarity);
-            console.log("Depth:", depth);
-            console.log("Table:", table);
-            console.log("X:", x);
-            console.log("Y:", y);
-            console.log("Z:", z);
-
-            // Here you can send the data to your server for prediction
-            // You can use AJAX or fetch API to send the data to your backend
-            // Once you receive the prediction, you can display it to the user
-        });
-    </script>
 </body>
 </html>
