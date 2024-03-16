@@ -13,6 +13,7 @@ def home_page():
     except Exception as e:
         logger.exception(e)
 
+
 @logger.catch()
 @app.route("/predict",methods = ["GET", "POST"])
 def predict_datapoints():
