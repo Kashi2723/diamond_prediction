@@ -3,55 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Price Prediction - Home</title>
+    <title>Diamond Price Prediction</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #beeaff; /* Slight light blue background color */
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            font-size: 18px; /* Body font size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 800px;
-            margin: 50px auto;
+            width: 90%; /* Adjusted width for better readability */
+            max-width: 800px; /* Maximum width */
+            background-color: #ffffff; /* White background color */
+            margin: 0;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            color: #333; /* Text color */
+        }
+
+        h1, h2, h3 {
             text-align: center;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            line-height: 1.6;
+            color: #1e90ff; /* Blue heading color */
+            font-weight: bold; /* Bold font weight */
             margin-bottom: 20px;
         }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
+
+        h1 {
+            font-size: 40px; /* Heading font size */
+        }
+
+        h2 {
+            font-size: 24px; /* Heading font size */
+        }
+
+        h3 {
+            font-size: 20px; /* Heading font size */
+        }
+
+        p {
+            margin-bottom: 18px;
+            line-height: 1.5; /* Increased line height for better readability */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li strong {
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #1e90ff; /* Blue button color */
+            color: #fff; /* White text color */
+            text-align: center;
+            text-decoration: none;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+            border-radius: 5px;
+            font-size: 20px; /* Button font size */
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .cta-button:hover {
+            background-color: #0066cc; /* Darker blue color on hover */
+        }
+
+        /* Section styling */
+        .section {
+            border-top: 1px solid #ccc; /* Gray border at the top */
+            padding-top: 20px; /* Add padding at the top */
+            margin-top: 20px; /* Add margin at the top */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Diamond Price Prediction</h1>
-        <p>Our Diamond Price Prediction model helps you estimate the price of a diamond based on various characteristics. To predict the price, we consider factors such as carat, cut, color, clarity, depth, table, and dimensions (x, y, z).</p>
-        <h2>How it Works:</h2>
-        <p>Simply fill out the form with the details of the diamond you're interested in, and our model will predict its price based on the provided information.</p>
-        <p>Our model has been trained on a large dataset of diamonds with known prices, allowing it to make accurate predictions.</p>
-        <p>Once you submit the form, our prediction algorithm will process the data and provide you with an estimated price for the diamond.</p>
-        <button onclick="window.location.href='/predict'">Predict Price Now</button>
+        <h1> 💎 Diamond Price Prediction 💎 </h1>
+        <div class="section">
+            <h2>About the Project</h2>
+            <p>Welcome to the revolutionary Diamond Price Prediction project! Our state-of-the-art predictive model harnesses the power of machine learning to estimate the price of diamonds with unparalleled accuracy. Powered by cutting-edge algorithms and a comprehensive dataset, our model analyzes various attributes of diamonds to deliver precise predictions.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Diamond Features</h2>
+            <ul>
+                <li><strong>Carat:</strong> The weight of the diamond, measured in metric carats.</li>
+                <li><strong>Cut:</strong> The quality of the diamond's cut, which influences its brilliance and sparkle.</li>
+                <li><strong>Color:</strong> The color grade of the diamond, ranging from J (worst) to D (best).</li>
+                <li><strong>Clarity:</strong> The presence of internal and external flaws in the diamond.</li>
+                <li><strong>Depth:</strong> The height of the diamond from culet to table, expressed as a percentage of mean(x, y).</li>
+                <li><strong>Table:</strong> The width of the top facet relative to the widest point.</li>
+                <li><strong>Dimensions (x, y, z):</strong> The length, width, and depth of the diamond.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How it Works</h2>
+            <p>These features play a crucial role in determining the price of a diamond. By analyzing these attributes, our predictive model learns patterns and relationships to make accurate price predictions.</p>
+
+            <p>To get started, you can input the characteristics of a diamond into the model, and it will provide you with an estimated price based on the dataset it has been trained on.</p>
+
+            <a href="predict" class="cta-button">Explore Diamond Price Prediction</a>
+        </div>
     </div>
 </body>
 </html>
